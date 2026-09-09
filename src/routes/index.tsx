@@ -78,17 +78,13 @@ function HomePage() {
           </div>
 
           <figure className="relative">
-            {/* PLACEHOLDER IMAGE — replace with an authentic professional photograph of Dr. Sinha. */}
             <img
               src={heroPortraitAsset.url}
-              width={1024}
-              height={1280}
+              width={1154}
+              height={887}
               alt="Dr. Subhash Kumar Sinha, Senior Cardiothoracic and Vascular Surgeon, in surgical scrubs"
               className="w-full rounded-3xl border border-border object-cover shadow-[var(--shadow-elegant)]"
             />
-            <figcaption className="mt-3 text-center text-xs text-muted-foreground">
-              Placeholder image — to be replaced with Dr. Sinha's official photograph.
-            </figcaption>
           </figure>
         </div>
       </section>
