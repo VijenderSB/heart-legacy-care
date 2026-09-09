@@ -16,12 +16,12 @@ export function AppointmentForm({ withHospital = false }: { withHospital?: boole
     const data = new FormData(form);
     const nextErrors: Record<string, string> = {};
 
-    if (!String(data.get("name") ?? "").trim()) nextErrors.name = "Please enter the patient's name.";
+    if (!String(data.get("name") ?? "").trim()) nextErrors['name'] = "Please enter the patient's name.";
     if (!/^[0-9+\-\s]{8,16}$/.test(String(data.get("mobile") ?? "")))
-      nextErrors.mobile = "Please enter a valid mobile number.";
+      nextErrors['mobile'] = "Please enter a valid mobile number.";
     if (!/^\S+@\S+\.\S+$/.test(String(data.get("email") ?? "")))
-      nextErrors.email = "Please enter a valid email address.";
-    if (!data.get("consent")) nextErrors.consent = "Please provide consent to be contacted.";
+      nextErrors['email'] = "Please enter a valid email address.";
+    if (!data.get("consent")) nextErrors['consent'] = "Please provide consent to be contacted.";
 
     setErrors(nextErrors);
     if (Object.keys(nextErrors).length > 0) return;
@@ -56,16 +56,16 @@ export function AppointmentForm({ withHospital = false }: { withHospital?: boole
 
   return (
     <form onSubmit={handleSubmit} noValidate className="grid gap-5 sm:grid-cols-2">
-      <Field id="name" label="Patient's full name" required error={errors.name}>
+      <Field id="name" label="Patient's full name" required error={errors['name']}>
         <input id="name" name="name" className={inputClass} autoComplete="name" />
       </Field>
       <Field id="age" label="Age">
         <input id="age" name="age" type="number" min="0" max="120" className={inputClass} />
       </Field>
-      <Field id="mobile" label="Mobile number" required error={errors.mobile}>
+      <Field id="mobile" label="Mobile number" required error={errors['mobile']}>
         <input id="mobile" name="mobile" type="tel" className={inputClass} autoComplete="tel" />
       </Field>
-      <Field id="email" label="Email address" required error={errors.email}>
+      <Field id="email" label="Email address" required error={errors['email']}>
         <input id="email" name="email" type="email" className={inputClass} autoComplete="email" />
       </Field>
       <Field id="city" label="City and country">
@@ -102,9 +102,9 @@ export function AppointmentForm({ withHospital = false }: { withHospital?: boole
             information provided will be used only for that purpose.
           </span>
         </label>
-        {errors.consent && (
+        {errors['consent'] && (
           <p role="alert" className="mt-1 text-xs text-destructive">
-            {errors.consent}
+            {errors['consent']}
           </p>
         )}
       </div>

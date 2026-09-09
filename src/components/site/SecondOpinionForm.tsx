@@ -16,10 +16,10 @@ export function SecondOpinionForm() {
     const data = new FormData(form);
     const nextErrors: Record<string, string> = {};
 
-    if (!String(data.get("name") ?? "").trim()) nextErrors.name = "Please enter the patient's name.";
+    if (!String(data.get("name") ?? "").trim()) nextErrors['name'] = "Please enter the patient's name.";
     if (!/^[0-9+\-\s]{8,16}$/.test(String(data.get("mobile") ?? "")))
-      nextErrors.mobile = "Please enter a valid mobile number.";
-    if (!data.get("consent")) nextErrors.consent = "Please provide consent to share these details.";
+      nextErrors['mobile'] = "Please enter a valid mobile number.";
+    if (!data.get("consent")) nextErrors['consent'] = "Please provide consent to share these details.";
 
     const files: File[] = [];
     for (const key of ["reports", "angiography"]) {
@@ -67,13 +67,13 @@ export function SecondOpinionForm() {
 
   return (
     <form onSubmit={handleSubmit} noValidate className="grid gap-5 sm:grid-cols-2">
-      <Field id="so-name" label="Patient's name" required error={errors.name}>
+      <Field id="so-name" label="Patient's name" required error={errors['name']}>
         <input id="so-name" name="name" className={inputClass} />
       </Field>
       <Field id="so-age" label="Age">
         <input id="so-age" name="age" type="number" min="0" max="120" className={inputClass} />
       </Field>
-      <Field id="so-mobile" label="Mobile number" required error={errors.mobile}>
+      <Field id="so-mobile" label="Mobile number" required error={errors['mobile']}>
         <input id="so-mobile" name="mobile" type="tel" className={inputClass} />
       </Field>
       <Field id="so-city" label="City and country">
@@ -95,7 +95,7 @@ export function SecondOpinionForm() {
       <Field id="so-message" label="Message" className="sm:col-span-2">
         <textarea id="so-message" name="message" rows={4} className={inputClass} />
       </Field>
-      <Field id="so-reports" label="Medical report upload (PDF, JPG, JPEG, PNG)" error={errors.reports}>
+      <Field id="so-reports" label="Medical report upload (PDF, JPG, JPEG, PNG)" error={errors['reports']}>
         <input
           id="so-reports"
           name="reports"
@@ -107,7 +107,7 @@ export function SecondOpinionForm() {
       <Field
         id="so-angio"
         label="Angiography / echo report upload (PDF, JPG, JPEG, PNG)"
-        error={errors.angiography}
+        error={errors['angiography']}
       >
         <input
           id="so-angio"
@@ -133,9 +133,9 @@ export function SecondOpinionForm() {
             opinion.
           </span>
         </label>
-        {errors.consent && (
+        {errors['consent'] && (
           <p role="alert" className="mt-1 text-xs text-destructive">
-            {errors.consent}
+            {errors['consent']}
           </p>
         )}
       </div>

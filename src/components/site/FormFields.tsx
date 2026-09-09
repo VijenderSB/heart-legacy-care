@@ -12,8 +12,8 @@ export function Field({
 }: {
   id: string;
   label: string;
-  required?: boolean;
-  error?: string;
+  required?: boolean | undefined;
+  error?: string | undefined;
   children: ReactNode;
   className?: string;
 }) {
