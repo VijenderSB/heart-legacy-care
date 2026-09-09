@@ -46,8 +46,17 @@ export const Route = createFileRoute("/contact")({
           name: "Dr. S. K. Sinha — Cardiothoracic & Vascular Surgery Consultation",
           medicalSpecialty: "Cardiovascular",
           url: "/contact",
-          // PLACEHOLDER: add verified address, geo coordinates and telephone to
-          // complete LocalBusiness data once location details are confirmed.
+          telephone: contact.phoneDisplay,
+          email: contact.email,
+          address: {
+            "@type": "PostalAddress",
+            name: hospital.name,
+            streetAddress: hospital.addressLines.slice(0, -1).join(", "),
+            addressLocality: "New Delhi",
+            addressRegion: "Delhi",
+            postalCode: "110017",
+            addressCountry: "IN",
+          },
         }),
       },
     ],
