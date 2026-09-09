@@ -89,18 +89,14 @@ function AboutPage() {
             </div>
           </div>
           <figure>
-            {/* PLACEHOLDER IMAGE — replace with an authentic consultation photograph. */}
             <img
-              src={consultationImage}
-              width={1400}
-              height={1000}
+              src={doctorImage.url}
+              width={1154}
+              height={887}
               loading="lazy"
-              alt="Placeholder image of a surgeon in consultation with a patient"
+              alt="Dr. Subhash Kumar Sinha, Senior Cardiothoracic and Vascular Surgeon, in surgical scrubs"
               className="w-full rounded-3xl border border-border object-cover shadow-[var(--shadow-card)]"
             />
-            <figcaption className="mt-3 text-xs text-muted-foreground">
-              Placeholder image — patient consultation.
-            </figcaption>
           </figure>
         </div>
       </section>
