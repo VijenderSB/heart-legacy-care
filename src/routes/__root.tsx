@@ -11,6 +11,9 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { SiteHeader } from "@/components/site/SiteHeader";
+import { SiteFooter } from "@/components/site/SiteFooter";
+import { FloatingActions } from "@/components/site/FloatingActions";
 
 function NotFoundComponent() {
   return (
@@ -77,21 +80,45 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Dr. S. K. Sinha | Senior Cardiac Surgeon in Delhi" },
+      {
+        name: "description",
+        content:
+          "Consult Dr. Subhash Kumar Sinha, a senior Cardiothoracic and Vascular Surgeon with 40+ years of experience in beating heart bypass, valve, minimally invasive and complex cardiac surgery.",
+      },
+      { name: "author", content: "Dr. Subhash Kumar Sinha" },
+      { property: "og:site_name", content: "Dr. S. K. Sinha — Cardiothoracic & Vascular Surgeon" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
       },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter+Tight:wght@400;500;600&display=swap",
+      },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Physician",
+          name: "Dr. Subhash Kumar Sinha",
+          medicalSpecialty: "Cardiothoracic and Vascular Surgery",
+          description:
+            "Senior Cardiothoracic and Vascular Surgeon with more than 40 years of experience, recognised for pioneering contributions to beating heart surgery.",
+          url: "/",
+          // PLACEHOLDER: add verified telephone, address and hospital affiliation
+          // before publishing to enable full LocalBusiness / MedicalBusiness data.
+        }),
+      },
     ],
   }),
   shellComponent: RootShell,
@@ -119,8 +146,19 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground"
+      >
+        Skip to content
+      </a>
+      <SiteHeader />
+      <main id="main">
+        {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+        <Outlet />
+      </main>
+      <SiteFooter />
+      <FloatingActions />
     </QueryClientProvider>
   );
 }
