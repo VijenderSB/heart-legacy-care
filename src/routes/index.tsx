@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, MessageCircle, Phone, PlayCircle, Quote, ShieldCheck } from "lucide-react";
 
-import heroPortrait from "@/assets/placeholder-dr-sinha-portrait.jpg";
+import heroPortraitAsset from "@/assets/dr-subhash-kumar-sinha.png.asset.json";
 import theatreImage from "@/assets/placeholder-cardiac-theatre.jpg";
 import { AppointmentForm } from "@/components/site/AppointmentForm";
 import { CtaBanner } from "@/components/site/CtaBanner";
@@ -80,10 +80,10 @@ function HomePage() {
           <figure className="relative">
             {/* PLACEHOLDER IMAGE — replace with an authentic professional photograph of Dr. Sinha. */}
             <img
-              src={heroPortrait}
+              src={heroPortraitAsset.url}
               width={1024}
               height={1280}
-              alt="Placeholder professional portrait representing Dr. Subhash Kumar Sinha, Senior Cardiothoracic and Vascular Surgeon"
+              alt="Dr. Subhash Kumar Sinha, Senior Cardiothoracic and Vascular Surgeon, in surgical scrubs"
               className="w-full rounded-3xl border border-border object-cover shadow-[var(--shadow-elegant)]"
             />
             <figcaption className="mt-3 text-center text-xs text-muted-foreground">
