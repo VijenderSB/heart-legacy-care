@@ -83,7 +83,7 @@ function HomePage() {
               src={heroPortraitAsset.url}
               width={1024}
               height={1280}
-              alt="Placeholder professional portrait representing Dr. Subhash Kumar Sinha, Senior Cardiothoracic and Vascular Surgeon"
+              alt="Dr. Subhash Kumar Sinha, Senior Cardiothoracic and Vascular Surgeon, in surgical scrubs"
               className="w-full rounded-3xl border border-border object-cover shadow-[var(--shadow-elegant)]"
             />
             <figcaption className="mt-3 text-center text-xs text-muted-foreground">
