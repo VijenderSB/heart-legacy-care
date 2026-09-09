@@ -14,26 +14,27 @@ export const doctor = {
 };
 
 export const contact = {
-  // PLACEHOLDER numbers — replace with verified clinic numbers.
-  phoneDisplay: "+91 00000 00000",
-  phoneHref: "tel:+910000000000",
-  whatsappDisplay: "+91 00000 00000",
-  whatsappHref: "https://wa.me/910000000000",
-  email: "appointments@example.com",
-  emailHref: "mailto:appointments@example.com",
+  // From Dr. Sinha's practice listings — confirm WhatsApp number is WhatsApp-enabled.
+  phoneDisplay: "+91 98113 21668",
+  phoneHref: "tel:+919811321668",
+  whatsappDisplay: "+91 98113 21668",
+  whatsappHref: "https://wa.me/919811321668",
+  email: "drsinhacardiacsurgeon@gmail.com",
+  emailHref: "mailto:drsinhacardiacsurgeon@gmail.com",
 };
 
-/** PLACEHOLDER — confirm current hospital associations, designations and OPD schedules before publishing. */
+/** From Max Healthcare / practice listings — confirm OPD days and timings before publishing. */
 export const hospital = {
-  name: "Hospital Name (to be confirmed)",
-  addressLines: ["Address line 1", "Address line 2", "New Delhi, India — PIN"],
+  name: "Max Super Speciality Hospital, Saket",
+  addressLines: ["Saket Institutional Area", "Saket", "New Delhi, Delhi 110017"],
   opdDays: "Monday to Saturday (to be confirmed)",
   opdTimings: "10:00 AM – 4:00 PM (to be confirmed)",
-  appointmentPhoneDisplay: "+91 00000 00000",
-  appointmentPhoneHref: "tel:+910000000000",
-  // PLACEHOLDER Google Maps embed — replace `q=` with the verified hospital address.
-  mapsEmbedSrc: "https://www.google.com/maps?q=New+Delhi&output=embed",
-  directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=New+Delhi",
+  appointmentPhoneDisplay: "+91 98113 21668",
+  appointmentPhoneHref: "tel:+919811321668",
+  mapsEmbedSrc:
+    "https://www.google.com/maps?q=Max+Super+Speciality+Hospital+Saket+New+Delhi&output=embed",
+  directionsUrl:
+    "https://www.google.com/maps/dir/?api=1&destination=Max+Super+Speciality+Hospital,+Saket+Institutional+Area,+Saket,+New+Delhi+110017",
 };
 
 /** PLACEHOLDER — add verified profile URLs, or remove entries that do not exist. */
