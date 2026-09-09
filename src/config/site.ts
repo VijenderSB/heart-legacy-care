@@ -8,7 +8,7 @@
 export const doctor = {
   name: "Dr. Subhash Kumar Sinha",
   shortName: "Dr. S. K. Sinha",
-  title: "Senior Cardiothoracic & Vascular Surgeon",
+  title: "Senior Director – CTVS, Max Super Speciality Hospital, Saket",
   positioning: "Pioneer in Beating Heart Surgery",
   experienceYears: "40+",
 };

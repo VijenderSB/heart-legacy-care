@@ -5,7 +5,13 @@ import { Breadcrumbs, breadcrumbSchema } from "@/components/site/Breadcrumbs";
 import { CtaBanner } from "@/components/site/CtaBanner";
 import { PageHero } from "@/components/site/PageHero";
 import { doctor } from "@/config/site";
-import { associations, awards, memberships, qualifications } from "@/content/profile";
+import {
+  associations,
+  awards,
+  memberships,
+  qualifications,
+  specialityInterests,
+} from "@/content/profile";
 import { card } from "@/lib/ui";
 
 export const Route = createFileRoute("/about")({
@@ -60,14 +66,14 @@ function AboutPage() {
             <div className="mt-6 space-y-4 leading-relaxed text-muted-foreground">
               <p>
                 {doctor.name} is a highly accomplished cardiac surgeon with over 40 years of
-                experience in cardiac sciences and cardiac surgery. He serves as a Visiting Consultant
-                in Cardiothoracic and Vascular Surgery and is recognized for his pioneering
-                contributions to beating heart surgery.
+                experience in cardiac sciences and cardiac surgery. He currently serves as Senior
+                Director – CTVS at Max Super Speciality Hospital, Saket, New Delhi, and is
+                recognized worldwide for his pioneering contributions to beating heart surgery.
               </p>
               <p>
                 Throughout his distinguished career, Dr. Sinha has held senior leadership positions
-                across several prominent healthcare institutions, including serving as Senior Director
-                of CTVS at Max Super Speciality Hospital, Saket.
+                across several prominent healthcare institutions, including Batra Hospital and
+                Medical Research Centre, Paras Group of Hospitals and Max Healthcare.
               </p>
               <p>
                 His expertise spans a comprehensive range of cardiac surgical procedures, with
@@ -133,11 +139,14 @@ function AboutPage() {
                 </li>
               ))}
             </ul>
-            {/* CMS NOTE (visible to editors): */}
-            <p className="mt-6 rounded-xl border border-dashed border-gold/60 bg-secondary p-4 text-xs text-muted-foreground">
-              CMS note: Confirm current hospital associations, designations and OPD schedules before
-              publishing.
-            </p>
+            <div className={`${card} mt-8`}>
+              <h2 className="text-xl font-semibold text-primary">Areas of Special Interest</h2>
+              <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
+                {specialityInterests.map((item) => (
+                  <li key={item}>• {item}</li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           <div className="grid gap-6">
