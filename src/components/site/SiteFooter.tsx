@@ -71,6 +71,18 @@ export function SiteFooter() {
           <p className="mt-4">
             © {new Date().getFullYear()} {doctor.name}. All rights reserved.
           </p>
+          <p className="mt-3">
+            Powered by{" "}
+            <a
+              href="https://www.transess.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline transition-colors hover:text-gold"
+            >
+              Transess
+            </a>{" "}
+            — A Medical Digital Marketing Agency for 10X Medical Practice Growth
+          </p>
         </div>
       </div>
     </footer>
