@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, MessageCircle, Phone, PlayCircle, Quote, ShieldCheck } from "lucide-react";
 
-import heroPortrait from "@/assets/placeholder-dr-sinha-portrait.jpg";
+import heroPortraitAsset from "@/assets/dr-subhash-kumar-sinha.png.asset.json";
 import theatreImage from "@/assets/placeholder-cardiac-theatre.jpg";
 import { AppointmentForm } from "@/components/site/AppointmentForm";
 import { CtaBanner } from "@/components/site/CtaBanner";
