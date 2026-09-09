@@ -114,7 +114,7 @@ function HomePage() {
               A Distinguished Career Dedicated to Cardiac Care
             </h2>
             <p className="mt-6 leading-relaxed text-muted-foreground">
-              {doctor.name} is a highly accomplished cardiac surgeon serving as Visiting Consultant in
+              {doctor.name} is a highly accomplished cardiac surgeon serving as Senior Director – CTVS at Max Super Speciality Hospital, Saket, and a pioneer in
               Cardiothoracic and Vascular Surgery. Over a career spanning more than four decades, he
               has held senior leadership positions at several renowned healthcare institutions.
             </p>
