@@ -114,9 +114,10 @@ function HomePage() {
               A Distinguished Career Dedicated to Cardiac Care
             </h2>
             <p className="mt-6 leading-relaxed text-muted-foreground">
-              {doctor.name} is a highly accomplished cardiac surgeon serving as Senior Director – CTVS at Max Super Speciality Hospital, Saket, and a pioneer in
-              Cardiothoracic and Vascular Surgery. Over a career spanning more than four decades, he
-              has held senior leadership positions at several renowned healthcare institutions.
+              {doctor.name} is a highly accomplished Cardiothoracic and Vascular Surgeon serving as
+              Senior Director – CTVS at Max Super Speciality Hospital, Saket, New Delhi. Over a
+              career spanning more than four decades, he has held senior leadership positions at
+              several renowned healthcare institutions.
             </p>
             <p className="mt-4 leading-relaxed text-muted-foreground">
               He is particularly recognized for his contributions to beating heart surgery. His
