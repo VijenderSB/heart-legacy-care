@@ -1,4 +1,3 @@
-import { Link } from "@tanstack/react-router";
 import { ArrowUp, CalendarCheck, MessageCircle, Phone, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
