@@ -12,12 +12,12 @@ export const Route = createFileRoute("/privacy-policy")({
       {
         name: "description",
         content:
-          "How enquiry details and medical reports shared with the practice of Dr. Subhash Kumar Sinha are collected, used and protected.",
+          "How appointment enquiry details shared with the practice of Dr. Subhash Kumar Sinha are collected, used and protected.",
       },
       { property: "og:title", content: "Privacy Policy | Dr. S. K. Sinha" },
       {
         property: "og:description",
-        content: "How enquiry details and medical reports shared with the practice are handled.",
+        content: "How appointment enquiry details shared with the practice are handled.",
       },
       { property: "og:url", content: "/privacy-policy" },
       { property: "og:type", content: "article" },
