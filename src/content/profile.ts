@@ -62,6 +62,6 @@ export const whyConsult = [
 export const trustStats = [
   { value: "40+ Years", label: "Experience in Cardiac Sciences" },
   { value: "Pioneer", label: "In Beating Heart Surgery" },
-  { value: "75+", label: "Medics and Paramedics Trained" },
+  { value: "60000+", label: "Patient Treated" },
   { value: "International", label: "Training and Exposure" },
 ];
