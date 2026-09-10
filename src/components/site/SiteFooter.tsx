@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 
-import { contact, doctor, globalDisclaimer, hospital, socialLinks } from "@/config/site";
+import { contact, doctor, globalDisclaimer, hospital } from "@/config/site";
 
 const quickLinks = [
   { label: "Home", to: "/" },
@@ -38,7 +38,6 @@ export function SiteFooter() {
 
         <div>
           <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-gold">Contact</h2>
-          {/* PLACEHOLDER contact + hospital details — confirm before publishing. */}
           <ul className="mt-4 space-y-2 text-sm text-primary-foreground/80">
             <li>
               <a href={contact.phoneHref} className="hover:text-gold">
@@ -52,15 +51,6 @@ export function SiteFooter() {
             </li>
             <li>{hospital.name}</li>
             <li>{hospital.addressLines.join(", ")}</li>
-          </ul>
-          <ul className="mt-4 flex gap-4 text-sm">
-            {socialLinks.map((social) => (
-              <li key={social.label}>
-                <a href={social.href} className="text-primary-foreground/80 hover:text-gold">
-                  {social.label}
-                </a>
-              </li>
-            ))}
           </ul>
         </div>
       </div>
