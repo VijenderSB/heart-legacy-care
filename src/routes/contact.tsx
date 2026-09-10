@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { CalendarCheck, Clock, MapPin, MessageCircle, Phone } from "lucide-react";
 
 import { AppointmentForm } from "@/components/site/AppointmentForm";
@@ -22,7 +22,7 @@ export const Route = createFileRoute("/contact")({
       {
         property: "og:description",
         content:
-          "Request an appointment or an experienced second opinion for a cardiac surgical condition.",
+          "Request an appointment for a cardiac surgical consultation with Dr. S. K. Sinha.",
       },
       { property: "og:url", content: "/contact" },
       { property: "og:type", content: "website" },
@@ -69,7 +69,7 @@ function ContactPage() {
       <PageHero
         eyebrow="Contact"
         heading="Consult Dr. S. K. Sinha"
-        subheading="Request an appointment or an experienced second opinion for a cardiac surgical condition."
+        subheading="Request an appointment for a cardiac surgical consultation."
       />
       <Breadcrumbs items={[{ label: "Contact" }]} />
 
