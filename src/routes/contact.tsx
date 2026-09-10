@@ -1,10 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { CalendarCheck, Clock, MapPin, MessageCircle, Phone, Video } from "lucide-react";
+import { CalendarCheck, Clock, MapPin, MessageCircle, Phone } from "lucide-react";
 
 import { AppointmentForm } from "@/components/site/AppointmentForm";
 import { Breadcrumbs, breadcrumbSchema } from "@/components/site/Breadcrumbs";
 import { PageHero } from "@/components/site/PageHero";
-import { SecondOpinionForm } from "@/components/site/SecondOpinionForm";
+
 import { contact, hospital } from "@/config/site";
 import { btn, card } from "@/lib/ui";
 
@@ -16,7 +16,7 @@ export const Route = createFileRoute("/contact")({
       {
         name: "description",
         content:
-          "Request an appointment or an experienced second opinion from Dr. Subhash Kumar Sinha, senior Cardiothoracic and Vascular Surgeon. Call, WhatsApp or submit your reports online.",
+          "Request an appointment with Dr. Subhash Kumar Sinha, senior Cardiothoracic and Vascular Surgeon. Call, WhatsApp or book an OPD consultation online.";
       },
       { property: "og:title", content: "Consult Dr. S. K. Sinha" },
       {
