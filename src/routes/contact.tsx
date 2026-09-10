@@ -1,10 +1,10 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { CalendarCheck, Clock, MapPin, MessageCircle, Phone, Video } from "lucide-react";
+import { createFileRoute } from "@tanstack/react-router";
+import { CalendarCheck, Clock, MapPin, MessageCircle, Phone } from "lucide-react";
 
 import { AppointmentForm } from "@/components/site/AppointmentForm";
 import { Breadcrumbs, breadcrumbSchema } from "@/components/site/Breadcrumbs";
 import { PageHero } from "@/components/site/PageHero";
-import { SecondOpinionForm } from "@/components/site/SecondOpinionForm";
+
 import { contact, hospital } from "@/config/site";
 import { btn, card } from "@/lib/ui";
 
@@ -16,13 +16,13 @@ export const Route = createFileRoute("/contact")({
       {
         name: "description",
         content:
-          "Request an appointment or an experienced second opinion from Dr. Subhash Kumar Sinha, senior Cardiothoracic and Vascular Surgeon. Call, WhatsApp or submit your reports online.",
+          "Request an appointment with Dr. Subhash Kumar Sinha, senior Cardiothoracic and Vascular Surgeon. Call, WhatsApp or book an OPD consultation online.",
       },
       { property: "og:title", content: "Consult Dr. S. K. Sinha" },
       {
         property: "og:description",
         content:
-          "Request an appointment or an experienced second opinion for a cardiac surgical condition.",
+          "Request an appointment for a cardiac surgical consultation with Dr. S. K. Sinha.",
       },
       { property: "og:url", content: "/contact" },
       { property: "og:type", content: "website" },
@@ -69,12 +69,12 @@ function ContactPage() {
       <PageHero
         eyebrow="Contact"
         heading="Consult Dr. S. K. Sinha"
-        subheading="Request an appointment or an experienced second opinion for a cardiac surgical condition."
+        subheading="Request an appointment for a cardiac surgical consultation."
       />
       <Breadcrumbs items={[{ label: "Contact" }]} />
 
       <section className="py-16">
-        <div className="container-page grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="container-page grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <a href={contact.phoneHref} className={`${card} hover:-translate-y-1 hover:border-gold/60`}>
             <Phone className="h-6 w-6 text-accent" aria-hidden="true" />
             <h2 className="mt-4 text-lg font-semibold text-primary">Call for Appointment</h2>
@@ -94,11 +94,6 @@ function ContactPage() {
             <CalendarCheck className="h-6 w-6 text-accent" aria-hidden="true" />
             <h2 className="mt-4 text-lg font-semibold text-primary">In-Person Consultation</h2>
             <p className="mt-2 text-sm text-muted-foreground">Book an OPD appointment</p>
-          </a>
-          <a href="#second-opinion" className={`${card} hover:-translate-y-1 hover:border-gold/60`}>
-            <Video className="h-6 w-6 text-accent" aria-hidden="true" />
-            <h2 className="mt-4 text-lg font-semibold text-primary">Online Second Opinion</h2>
-            <p className="mt-2 text-sm text-muted-foreground">Share your reports securely</p>
           </a>
         </div>
       </section>
@@ -167,21 +162,6 @@ function ContactPage() {
         </div>
       </section>
 
-      <section id="second-opinion" className="bg-surface py-16">
-        <div className="container-page max-w-4xl">
-          <h2 className="text-2xl font-semibold text-primary sm:text-3xl">Second-Opinion Request</h2>
-          <p className="mt-3 text-sm text-muted-foreground">
-            Share your diagnosis and reports for an experienced cardiac surgical review.
-          </p>
-          <div className="mt-8 rounded-3xl border border-border bg-card p-6 shadow-[var(--shadow-card)] sm:p-10">
-            <SecondOpinionForm />
-          </div>
-          <p className="mt-6 text-xs text-muted-foreground">
-            Read our <Link to="/privacy-policy" className="text-accent hover:underline">Privacy Policy</Link> and{" "}
-            <Link to="/medical-disclaimer" className="text-accent hover:underline">Medical Disclaimer</Link>.
-          </p>
-        </div>
-      </section>
     </>
   );
 }
