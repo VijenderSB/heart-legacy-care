@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { CalendarCheck, Clock, MapPin, MessageCircle, Phone } from "lucide-react";
+import { CalendarCheck, MapPin, MessageCircle, Phone } from "lucide-react";
 
 import { AppointmentForm } from "@/components/site/AppointmentForm";
 import { Breadcrumbs, breadcrumbSchema } from "@/components/site/Breadcrumbs";
@@ -114,15 +114,6 @@ function ContactPage() {
                 <div>
                   <dt className="font-medium text-foreground">{hospital.name}</dt>
                   <dd>{hospital.addressLines.join(", ")}</dd>
-                </div>
-              </div>
-              <div className="flex gap-3">
-                <Clock className="h-5 w-5 shrink-0 text-accent" aria-hidden="true" />
-                <div>
-                  <dt className="font-medium text-foreground">OPD schedule</dt>
-                  <dd>
-                    {hospital.opdDays} · {hospital.opdTimings}
-                  </dd>
                 </div>
               </div>
               <div className="flex gap-3">

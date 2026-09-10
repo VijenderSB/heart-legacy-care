@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import { Breadcrumbs } from "@/components/site/Breadcrumbs";
+import { Breadcrumbs, breadcrumbSchema } from "@/components/site/Breadcrumbs";
 import { PageHero } from "@/components/site/PageHero";
 import { globalDisclaimer } from "@/config/site";
 
@@ -27,6 +27,17 @@ export const Route = createFileRoute("/medical-disclaimer")({
       { name: "robots", content: "noindex, follow" },
     ],
     links: [{ rel: "canonical", href: "/medical-disclaimer" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Medical Disclaimer", path: "/medical-disclaimer" },
+          ]),
+        ),
+      },
+    ],
   }),
 });
 

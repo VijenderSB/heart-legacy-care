@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import { Breadcrumbs } from "@/components/site/Breadcrumbs";
+import { Breadcrumbs, breadcrumbSchema } from "@/components/site/Breadcrumbs";
 import { PageHero } from "@/components/site/PageHero";
 import { contact } from "@/config/site";
 
@@ -27,6 +27,17 @@ export const Route = createFileRoute("/privacy-policy")({
       { name: "robots", content: "noindex, follow" },
     ],
     links: [{ rel: "canonical", href: "/privacy-policy" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Privacy Policy", path: "/privacy-policy" },
+          ]),
+        ),
+      },
+    ],
   }),
 });
 

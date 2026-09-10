@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import { Breadcrumbs } from "@/components/site/Breadcrumbs";
+import { Breadcrumbs, breadcrumbSchema } from "@/components/site/Breadcrumbs";
 import { PageHero } from "@/components/site/PageHero";
 
 export const Route = createFileRoute("/terms-of-use")({
@@ -23,6 +23,17 @@ export const Route = createFileRoute("/terms-of-use")({
       { name: "robots", content: "noindex, follow" },
     ],
     links: [{ rel: "canonical", href: "/terms-of-use" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Terms of Use", path: "/terms-of-use" },
+          ]),
+        ),
+      },
+    ],
   }),
 });
 
