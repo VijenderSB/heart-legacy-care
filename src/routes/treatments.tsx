@@ -18,11 +18,11 @@ export const Route = createFileRoute("/treatments")({
   component: TreatmentsPage,
   head: () => ({
     meta: [
-      { title: "Cardiac Procedures & Surgical Expertise | Dr. S. K. Sinha" },
+      { title: "Cardiac Surgery Treatments | Dr. S. K. Sinha" },
       {
         name: "description",
         content:
-          "Beating heart bypass, CABG, minimally invasive cardiac surgery, valve repair and replacement, aortic root and redo cardiac surgery explained by Dr. S. K. Sinha.",
+          "Explore beating heart bypass, CABG, minimally invasive cardiac surgery, valve procedures, aortic surgery and redo cardiac surgery in Delhi.",
       },
       { property: "og:title", content: "Cardiac Procedures and Surgical Expertise" },
       {
@@ -32,6 +32,12 @@ export const Route = createFileRoute("/treatments")({
       },
       { property: "og:url", content: "/treatments" },
       { property: "og:type", content: "article" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Cardiac Surgery Treatments | Dr. S. K. Sinha" },
+      {
+        name: "twitter:description",
+        content: "Information about bypass, valve, minimally invasive, aortic and redo cardiac surgery.",
+      },
     ],
     links: [{ rel: "canonical", href: "/treatments" }],
     scripts: [
@@ -53,6 +59,21 @@ export const Route = createFileRoute("/treatments")({
             "@type": "Question",
             name: faq.question,
             acceptedAnswer: { "@type": "Answer", text: faq.answer },
+          })),
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          name: "Cardiac surgery treatments",
+          numberOfItems: treatments.length,
+          itemListElement: treatments.map((treatment, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            name: treatment.name,
+            url: `/treatments#${treatment.slug}`,
           })),
         }),
       },

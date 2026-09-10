@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import { Breadcrumbs } from "@/components/site/Breadcrumbs";
+import { Breadcrumbs, breadcrumbSchema } from "@/components/site/Breadcrumbs";
 import { PageHero } from "@/components/site/PageHero";
 import { contact } from "@/config/site";
 
@@ -21,8 +21,23 @@ export const Route = createFileRoute("/privacy-policy")({
       },
       { property: "og:url", content: "/privacy-policy" },
       { property: "og:type", content: "article" },
+      { name: "twitter:card", content: "summary" },
+      { name: "twitter:title", content: "Privacy Policy | Dr. S. K. Sinha" },
+      { name: "twitter:description", content: "How appointment enquiry information is handled." },
+      { name: "robots", content: "noindex, follow" },
     ],
     links: [{ rel: "canonical", href: "/privacy-policy" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Privacy Policy", path: "/privacy-policy" },
+          ]),
+        ),
+      },
+    ],
   }),
 });
 
@@ -34,21 +49,13 @@ function PrivacyPolicyPage() {
       <article className="container-page max-w-3xl space-y-6 py-16 leading-relaxed text-muted-foreground">
         {/* PLACEHOLDER: have this policy reviewed by a legal advisor before publishing. */}
         <p>
-          This website collects only the information you choose to provide through the appointment and
-          second-opinion forms — such as your name, age, contact details, city, cardiac concern and any
-          medical reports you upload.
+          This website collects only the information you choose to provide through the appointment
+          form, such as your name, age, contact details, city and cardiac concern.
         </p>
         <h2 className="text-xl font-semibold text-primary">How the information is used</h2>
         <p>
-          Information is used solely to respond to your consultation request, to schedule an
-          appointment and to provide a surgical opinion. It is not sold or used for unrelated
-          marketing purposes.
-        </p>
-        <h2 className="text-xl font-semibold text-primary">Medical reports</h2>
-        <p>
-          Uploaded medical reports are treated as confidential health information. They are stored in
-          private, access-restricted storage and shared only with the clinical team involved in
-          reviewing your case.
+          Information is used solely to respond to your consultation request and schedule an
+          appointment. It is not sold or used for unrelated marketing purposes.
         </p>
         <h2 className="text-xl font-semibold text-primary">Retention and your rights</h2>
         <p>

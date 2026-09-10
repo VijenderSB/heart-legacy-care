@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import { Breadcrumbs } from "@/components/site/Breadcrumbs";
+import { Breadcrumbs, breadcrumbSchema } from "@/components/site/Breadcrumbs";
 import { PageHero } from "@/components/site/PageHero";
 
 export const Route = createFileRoute("/terms-of-use")({
@@ -17,8 +17,23 @@ export const Route = createFileRoute("/terms-of-use")({
       { property: "og:description", content: "Terms governing the use of this website." },
       { property: "og:url", content: "/terms-of-use" },
       { property: "og:type", content: "article" },
+      { name: "twitter:card", content: "summary" },
+      { name: "twitter:title", content: "Terms of Use | Dr. S. K. Sinha" },
+      { name: "twitter:description", content: "Conditions governing the use of this website." },
+      { name: "robots", content: "noindex, follow" },
     ],
     links: [{ rel: "canonical", href: "/terms-of-use" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Terms of Use", path: "/terms-of-use" },
+          ]),
+        ),
+      },
+    ],
   }),
 });
 

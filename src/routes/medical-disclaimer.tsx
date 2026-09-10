@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import { Breadcrumbs } from "@/components/site/Breadcrumbs";
+import { Breadcrumbs, breadcrumbSchema } from "@/components/site/Breadcrumbs";
 import { PageHero } from "@/components/site/PageHero";
 import { globalDisclaimer } from "@/config/site";
 
@@ -21,8 +21,23 @@ export const Route = createFileRoute("/medical-disclaimer")({
       },
       { property: "og:url", content: "/medical-disclaimer" },
       { property: "og:type", content: "article" },
+      { name: "twitter:card", content: "summary" },
+      { name: "twitter:title", content: "Medical Disclaimer | Dr. S. K. Sinha" },
+      { name: "twitter:description", content: "Educational information only, not individual medical advice." },
+      { name: "robots", content: "noindex, follow" },
     ],
     links: [{ rel: "canonical", href: "/medical-disclaimer" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Medical Disclaimer", path: "/medical-disclaimer" },
+          ]),
+        ),
+      },
+    ],
   }),
 });
 

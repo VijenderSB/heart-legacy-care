@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, MessageCircle, Phone, PlayCircle, Quote, ShieldCheck } from "lucide-react";
+import { ArrowRight, MessageCircle, Phone, ShieldCheck } from "lucide-react";
 
 import aboutPortraitAsset from "@/assets/dr-sinha-about-cropped.png.asset.json";
 import heroPortraitAsset from "@/assets/dr-subhash-kumar-sinha.png.asset.json";
@@ -15,13 +15,13 @@ export const Route = createFileRoute("/")({
   component: HomePage,
   head: () => ({
     meta: [
-      { title: "Dr. S. K. Sinha | Senior Cardiac Surgeon in Delhi" },
+      { title: "Cardiac Surgeon in Delhi | Dr. Subhash K. Sinha" },
       {
         name: "description",
         content:
-          "Consult Dr. Subhash Kumar Sinha, a senior Cardiothoracic and Vascular Surgeon with 40+ years of experience in beating heart bypass, valve, minimally invasive and complex cardiac surgery.",
+          "Consult Dr. Subhash Kumar Sinha, cardiac surgeon in Delhi with 40+ years of experience in bypass, valve, minimally invasive and aortic surgery.",
       },
-      { property: "og:title", content: "Dr. S. K. Sinha | Senior Cardiac Surgeon in Delhi" },
+      { property: "og:title", content: "Cardiac Surgeon in Delhi | Dr. Subhash K. Sinha" },
       {
         property: "og:description",
         content:
@@ -29,6 +29,12 @@ export const Route = createFileRoute("/")({
       },
       { property: "og:url", content: "/" },
       { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Cardiac Surgeon in Delhi | Dr. Subhash K. Sinha" },
+      {
+        name: "twitter:description",
+        content: "Consult Dr. Subhash Kumar Sinha for experienced cardiac surgical care in New Delhi.",
+      },
     ],
     links: [{ rel: "canonical", href: "/" }],
   }),
@@ -45,7 +51,7 @@ function HomePage() {
               Pioneer in Beating Heart Surgery
             </p>
             <h1 className="mt-5 text-4xl font-semibold leading-[1.1] text-primary sm:text-5xl">
-              Four Decades of Experience. One Lifelong Commitment to Your Heart.
+              Dr. Subhash Kumar Sinha — Cardiac Surgeon in Delhi
             </h1>
             <span className="rule-gold mt-6" aria-hidden="true" />
             <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
@@ -58,9 +64,7 @@ function HomePage() {
               <Link to="/contact" hash="appointment" className={btn.primary}>
                 Book an Appointment
               </Link>
-              <Link to="/contact" hash="second-opinion" className={btn.outline}>
-                Request a Second Opinion
-              </Link>
+              <Link to="/treatments" className={btn.outline}>Explore Treatments</Link>
             </div>
             <div className="mt-5 flex flex-wrap gap-5 text-sm">
               <a href={contact.phoneHref} className="inline-flex items-center gap-2 text-primary hover:text-accent">
@@ -232,43 +236,6 @@ function HomePage() {
               </li>
             ))}
           </ol>
-        </div>
-      </section>
-
-      {/* SECTION 9 — TESTIMONIALS (placeholders only) */}
-      <section className="py-20">
-        <div className="container-page">
-          <h2 className="text-3xl font-semibold text-primary sm:text-4xl">Patient Experiences</h2>
-          <p className="mt-3 text-sm text-muted-foreground">
-            {/* PLACEHOLDER: add only verified, consented patient testimonials. */}
-            Verified testimonials will be published here once patient consent has been obtained.
-          </p>
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
-            {[1, 2, 3].map((index) => (
-              <blockquote key={index} className={card}>
-                <Quote className="h-6 w-6 text-gold" aria-hidden="true" />
-                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                  Verified patient testimonial will be added here.
-                </p>
-                <footer className="mt-6 text-xs uppercase tracking-[0.16em] text-muted-foreground">
-                  Placeholder {index}
-                </footer>
-              </blockquote>
-            ))}
-          </div>
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
-            {[1, 2].map((index) => (
-              <div
-                key={index}
-                className="flex aspect-video items-center justify-center rounded-2xl border border-dashed border-border bg-secondary text-sm text-muted-foreground"
-              >
-                <span className="flex items-center gap-2">
-                  <PlayCircle className="h-5 w-5" aria-hidden="true" />
-                  Video testimonial placeholder {index}
-                </span>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 

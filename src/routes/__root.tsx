@@ -14,6 +14,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { FloatingActions } from "@/components/site/FloatingActions";
+import { contact, doctor, hospital } from "@/config/site";
 
 function NotFoundComponent() {
   return (
@@ -109,14 +110,39 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "Physician",
-          name: "Dr. Subhash Kumar Sinha",
-          medicalSpecialty: "Cardiothoracic and Vascular Surgery",
-          description:
-            "Senior Cardiothoracic and Vascular Surgeon with more than 40 years of experience, recognised for pioneering contributions to beating heart surgery.",
-          url: "/",
-          // PLACEHOLDER: add verified telephone, address and hospital affiliation
-          // before publishing to enable full LocalBusiness / MedicalBusiness data.
+          "@graph": [
+            {
+              "@type": "WebSite",
+              "@id": "/#website",
+              url: "/",
+              name: "Dr. S. K. Sinha — Cardiac Surgeon",
+              inLanguage: "en-IN",
+            },
+            {
+              "@type": "Physician",
+              "@id": "/#physician",
+              name: doctor.name,
+              url: "/",
+              description:
+                "Senior Cardiothoracic and Vascular Surgeon with more than 40 years of experience and expertise in beating heart bypass, valve, minimally invasive and complex aortic surgery.",
+              medicalSpecialty: ["Cardiovascular", "Cardiothoracic Surgery", "Vascular Surgery"],
+              telephone: contact.phoneDisplay,
+              email: contact.email,
+              areaServed: { "@type": "City", name: "New Delhi" },
+              worksFor: {
+                "@type": "Hospital",
+                name: hospital.name,
+                address: {
+                  "@type": "PostalAddress",
+                  streetAddress: hospital.addressLines.slice(0, -1).join(", "),
+                  addressLocality: "New Delhi",
+                  addressRegion: "Delhi",
+                  postalCode: "110017",
+                  addressCountry: "IN",
+                },
+              },
+            },
+          ],
         }),
       },
     ],

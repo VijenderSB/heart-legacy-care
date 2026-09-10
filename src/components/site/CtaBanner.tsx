@@ -30,9 +30,7 @@ export function CtaBanner({
           <Link to="/contact" hash="appointment" className={dark ? btn.gold : btn.primary}>
             Book Appointment
           </Link>
-          <Link to="/contact" hash="second-opinion" className={dark ? btn.onDark : btn.outline}>
-            Request Second Opinion
-          </Link>
+          <Link to="/treatments" className={dark ? btn.onDark : btn.outline}>View Treatments</Link>
           <a href={contact.phoneHref} className={dark ? btn.onDark : btn.outline}>
             <Phone className="h-4 w-4" aria-hidden="true" /> Call Now
           </a>

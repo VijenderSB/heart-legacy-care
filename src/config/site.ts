@@ -37,12 +37,6 @@ export const hospital = {
     "https://www.google.com/maps/dir/?api=1&destination=Max+Super+Speciality+Hospital,+Saket+Institutional+Area,+Saket,+New+Delhi+110017",
 };
 
-/** PLACEHOLDER — add verified profile URLs, or remove entries that do not exist. */
-export const socialLinks: { label: string; href: string }[] = [
-  { label: "LinkedIn", href: "#" },
-  { label: "YouTube", href: "#" },
-];
-
 export const navLinks = [
   { label: "Home", to: "/" },
   { label: "About", to: "/about" },

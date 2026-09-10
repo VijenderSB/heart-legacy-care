@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { CalendarCheck, Clock, MapPin, MessageCircle, Phone } from "lucide-react";
+import { CalendarCheck, MapPin, MessageCircle, Phone } from "lucide-react";
 
 import { AppointmentForm } from "@/components/site/AppointmentForm";
 import { Breadcrumbs, breadcrumbSchema } from "@/components/site/Breadcrumbs";
@@ -12,11 +12,11 @@ export const Route = createFileRoute("/contact")({
   component: ContactPage,
   head: () => ({
     meta: [
-      { title: "Book an Appointment | Consult Dr. S. K. Sinha, Cardiac Surgeon" },
+      { title: "Book a Cardiac Surgery Appointment | Dr. Sinha" },
       {
         name: "description",
         content:
-          "Request an appointment with Dr. Subhash Kumar Sinha, senior Cardiothoracic and Vascular Surgeon. Call, WhatsApp or book an OPD consultation online.",
+          "Book an appointment with Dr. Subhash Kumar Sinha at Max Super Speciality Hospital, Saket. Call, WhatsApp or request a consultation online.",
       },
       { property: "og:title", content: "Consult Dr. S. K. Sinha" },
       {
@@ -26,6 +26,12 @@ export const Route = createFileRoute("/contact")({
       },
       { property: "og:url", content: "/contact" },
       { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Book a Cardiac Surgery Appointment | Dr. Sinha" },
+      {
+        name: "twitter:description",
+        content: "Request a cardiac surgery consultation with Dr. S. K. Sinha at Max Saket, New Delhi.",
+      },
     ],
     links: [{ rel: "canonical", href: "/contact" }],
     scripts: [
@@ -98,7 +104,6 @@ function ContactPage() {
         </div>
       </section>
 
-      {/* HOSPITAL DETAILS — all values are editable placeholders in src/config/site.ts */}
       <section className="bg-surface py-16">
         <div className="container-page grid gap-10 lg:grid-cols-2">
           <div>
@@ -109,15 +114,6 @@ function ContactPage() {
                 <div>
                   <dt className="font-medium text-foreground">{hospital.name}</dt>
                   <dd>{hospital.addressLines.join(", ")}</dd>
-                </div>
-              </div>
-              <div className="flex gap-3">
-                <Clock className="h-5 w-5 shrink-0 text-accent" aria-hidden="true" />
-                <div>
-                  <dt className="font-medium text-foreground">OPD schedule</dt>
-                  <dd>
-                    {hospital.opdDays} · {hospital.opdTimings}
-                  </dd>
                 </div>
               </div>
               <div className="flex gap-3">
@@ -135,15 +131,10 @@ function ContactPage() {
             <a href={hospital.directionsUrl} target="_blank" rel="noreferrer" className={`${btn.outline} mt-6`}>
               Get Directions
             </a>
-            <p className="mt-6 rounded-xl border border-dashed border-gold/60 bg-background p-4 text-xs text-muted-foreground">
-              Developer note: all hospital names, addresses, OPD days, timings, phone numbers and the
-              map location are placeholders and must be confirmed before launch.
-            </p>
           </div>
           <div className="overflow-hidden rounded-3xl border border-border shadow-[var(--shadow-card)]">
-            {/* PLACEHOLDER map — update the embed source with the verified hospital address. */}
             <iframe
-              title="Hospital location map (placeholder)"
+              title={`Map showing ${hospital.name}`}
               src={hospital.mapsEmbedSrc}
               loading="lazy"
               className="h-80 w-full border-0"

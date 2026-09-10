@@ -18,11 +18,11 @@ export const Route = createFileRoute("/about")({
   component: AboutPage,
   head: () => ({
     meta: [
-      { title: "About Dr. Subhash Kumar Sinha | Cardiothoracic & Vascular Surgeon" },
+      { title: "About Dr. Subhash Kumar Sinha | Cardiac Surgeon" },
       {
         name: "description",
         content:
-          "Dr. Subhash Kumar Sinha — senior Cardiothoracic and Vascular Surgeon with 40+ years of experience, qualifications, hospital associations, awards and philosophy of cardiac care.",
+          "Learn about Dr. Subhash Kumar Sinha, Senior Director of CTVS at Max Saket, his qualifications, cardiac surgery experience and professional memberships.",
       },
       { property: "og:title", content: "About Dr. Subhash Kumar Sinha" },
       {
@@ -32,6 +32,12 @@ export const Route = createFileRoute("/about")({
       },
       { property: "og:url", content: "/about" },
       { property: "og:type", content: "profile" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "About Dr. Subhash Kumar Sinha | Cardiac Surgeon" },
+      {
+        name: "twitter:description",
+        content: "Qualifications, clinical experience and professional profile of Dr. Subhash Kumar Sinha.",
+      },
     ],
     links: [{ rel: "canonical", href: "/about" }],
     scripts: [
@@ -43,6 +49,21 @@ export const Route = createFileRoute("/about")({
             { name: "About", path: "/about" },
           ]),
         ),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ProfilePage",
+          url: "/about",
+          mainEntity: {
+            "@id": "/#physician",
+            "@type": "Physician",
+            name: doctor.name,
+            jobTitle: doctor.title,
+            medicalSpecialty: "Cardiothoracic and Vascular Surgery",
+          },
+        }),
       },
     ],
   }),
