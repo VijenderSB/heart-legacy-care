@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, MessageCircle, Phone, ShieldCheck } from "lucide-react";
 
 import aboutPortraitAsset from "@/assets/dr-sinha-about-cropped.png.asset.json";
-import heroPortraitAsset from "@/assets/dr-subhash-kumar-sinha.png.asset.json";
+import cardiacCareBannerAsset from "@/assets/cardiac-care-banner.jpg.asset.json";
 import { AppointmentForm } from "@/components/site/AppointmentForm";
 import { CtaBanner } from "@/components/site/CtaBanner";
 import { TreatmentIcon } from "@/components/site/TreatmentIcon";
@@ -44,52 +44,50 @@ function HomePage() {
   return (
     <>
       {/* SECTION 2 — HERO */}
-      <section className="relative overflow-hidden bg-surface">
-        <div className="container-page grid items-center gap-12 py-16 lg:grid-cols-2 lg:py-24">
-          <div className="fade-up">
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-accent">
+      <section className="relative isolate flex min-h-[650px] items-center overflow-hidden bg-primary py-16 sm:min-h-[680px] sm:py-20 lg:min-h-[720px]">
+        <img
+          src={cardiacCareBannerAsset.url}
+          width={1920}
+          height={1088}
+          alt="Cardiac surgical team working in an advanced operating theatre"
+          className="absolute inset-0 -z-20 h-full w-full object-cover object-[68%_center]"
+        />
+        <div className="absolute inset-0 -z-10 bg-primary/65 sm:bg-primary/55" aria-hidden="true" />
+        <div className="container-page w-full">
+          <div className="fade-up max-w-3xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-gold">
               Pioneer in Beating Heart Surgery
             </p>
-            <h1 className="mt-5 text-4xl font-semibold leading-[1.1] text-primary sm:text-5xl">
+            <h1 className="mt-5 text-4xl font-semibold leading-[1.1] text-primary-foreground sm:text-5xl lg:text-6xl">
               Dr. Subhash Kumar Sinha — Cardiac Surgeon in Delhi
             </h1>
             <span className="rule-gold mt-6" aria-hidden="true" />
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+            <p className="mt-6 max-w-2xl text-base leading-relaxed text-primary-foreground/85 sm:text-lg">
               {doctor.name} is a senior Cardiothoracic and Vascular Surgeon with more than 40 years of
               experience in cardiac sciences and cardiac surgery. His expertise includes beating heart
               bypass surgery, minimally invasive cardiac surgery, heart valve procedures and complex
               aortic surgery.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link to="/contact" hash="appointment" className={btn.primary}>
+              <Link to="/contact" hash="appointment" className={btn.gold}>
                 Book an Appointment
               </Link>
-              <Link to="/treatments" className={btn.outline}>Explore Treatments</Link>
+              <Link to="/treatments" className={btn.onDark}>Explore Treatments</Link>
             </div>
-            <div className="mt-5 flex flex-wrap gap-5 text-sm">
-              <a href={contact.phoneHref} className="inline-flex items-center gap-2 text-primary hover:text-accent">
+            <div className="mt-5 flex flex-wrap gap-5 text-sm text-primary-foreground/85">
+              <a href={contact.phoneHref} className="inline-flex items-center gap-2 hover:text-gold">
                 <Phone className="h-4 w-4" aria-hidden="true" /> Call Now
               </a>
               <a
                 href={contact.whatsappHref}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 text-primary hover:text-accent"
+                className="inline-flex items-center gap-2 hover:text-gold"
               >
                 <MessageCircle className="h-4 w-4" aria-hidden="true" /> WhatsApp
               </a>
             </div>
           </div>
-
-          <figure className="relative">
-            <img
-              src={heroPortraitAsset.url}
-              width={1154}
-              height={887}
-              alt="Dr. Subhash Kumar Sinha, Senior Cardiothoracic and Vascular Surgeon, in surgical scrubs"
-              className="w-full rounded-3xl border border-border object-cover shadow-[var(--shadow-elegant)]"
-            />
-          </figure>
         </div>
       </section>
 
