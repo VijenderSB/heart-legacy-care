@@ -74,7 +74,7 @@ function ContactPage() {
       <Breadcrumbs items={[{ label: "Contact" }]} />
 
       <section className="py-16">
-        <div className="container-page grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="container-page grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <a href={contact.phoneHref} className={`${card} hover:-translate-y-1 hover:border-gold/60`}>
             <Phone className="h-6 w-6 text-accent" aria-hidden="true" />
             <h2 className="mt-4 text-lg font-semibold text-primary">Call for Appointment</h2>
